@@ -1,6 +1,8 @@
 defmodule GuessingGame do
 
-  def compare(secret_number, guess) when not is_number(guess) do
+  def compare(_, guess \\ :no_guess)
+
+  def compare(_, :no_guess) do
     "Make a guess"
   end
 
@@ -18,9 +20,5 @@ defmodule GuessingGame do
 
   def compare(secret_number, guess) when guess < secret_number do
     "Too low"
-  end
-
-  def compare(_)  do
-    "Make a guess"
   end
 end
